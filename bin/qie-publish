@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const chalk = require('chalk');
+
+program.usage('<env>').parse(process.argv);
+
+/**
+ * Help.
+ */
+program.on('--help', () => {
+  console.log()
+  console.log('  Examples:')
+  console.log()
+  console.log(chalk.gray('    # 将版本信息记录到 dev.abc.com 环境'))
+  console.log('    $ qie publish dev.abc.com')
+  console.log()
+})
+
+/**
+ * Help.
+ */
+
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 1) return program.help()
+}
+help()
+
+// 环境名称
+let envName = program.args[0];
+
+require('../packages/commands/publish')(envName);

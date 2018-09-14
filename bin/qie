@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+require('commander')
+  .version(require('../package').version)
+  .usage('<command> [options]')
+  .command('ip', '显示本机IP地址')
+  .command('init', '初始化 qie.config.js 配置文件')
+  .command('publish', '保存单页应用版本信息至数据库')
+  .command('upload', '上传文件至七牛或阿里云')
+  .command('push', 'Git推送当前分支到远端')
+  .command('open', '打开前端管理平台')
+  .command('question', '询问配置')
+  .parse(process.argv)

@@ -1,0 +1,37 @@
+{
+  "name": "qie-cli",
+  "version": "0.0.1",
+  "description": "A simple CLI for publish projects.",
+  "bin": {
+    "qie": "./bin/qie",
+    "qie-init": "./bin/qie-init",
+    "qie-ip": "./bin/qie-ip",
+    "qie-open": "./bin/qie-open",
+    "qie-publish": "./bin/qie-publish",
+    "qie-push": "./bin/qie-push",
+    "qie-upload": "./bin/qie-upload"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-lt/qie-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "publish"
+  ],
+  "author": "hz_liutao@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "clui": "^0.3.6",
+    "commander": "^2.15.1",
+    "figlet": "^1.2.0",
+    "inquirer": "^6.0.0",
+    "opn": "^5.3.0",
+    "shelljs": "^0.8.2"
+  }
+}
