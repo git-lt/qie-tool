@@ -8,7 +8,7 @@
 - `qie init` 初始化 `qie.config.js` 配置文件
 - `qie upload` 上传文件至七牛或阿里云
 - `qie publish dev.abc.com` 保存单页应用数据至数据库
-- `qie push` git推送代码到远端
+- `qie push` git推送当前分支代码到远端
 - `qie open` 打开前端项目管理平台
 
 ## 配置文件
