@@ -51,11 +51,12 @@ module.exports = (env) => {
             envName: env,
             desc,
         };
-        const apiUrl =  path.join(config.publish.url, '/pub/version');
+        const apiUrl = `${config.publish.url}/pub/version`;
         axios.defaults.timeout = 30 * 1000;
         axios.defaults.responseType = 'json';
 
         const spinner = new Spinner('正在发布...');
+        
         axios
             .post(apiUrl, params)
             .then(res => res.data)

@@ -1,6 +1,6 @@
 {
   "name": "qie-tool",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A simple CLI for publish projects.",
   "bin": {
     "qie": "./bin/qie",

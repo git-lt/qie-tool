@@ -16,21 +16,26 @@
 `qie.config.js` 
 
 ```javascript
+const pkgJson = require('./package.json');
+
+// 带 * 的为必填项
 module.exports = {
-    repository: '',         // 当前项目仓库地址
-    pubUrl: '',             // 发布平台的地址
+    publish: {
+        url: '',                    // * 前端项目管理平台地址
+        key: '',                    // * 前端项目管理平台中应用的 KEY
+    },
     upload: {
-        server: 'qn',       // 阿里云：ali 七牛云: qn
+        server: 'qn',               // * 阿里云：ali 七牛云: qn
         config: {
-            accessKeyId: "",
-            accessKeySecret: "",
-            bucket: "",     // 空间名称
-            region: "",     // bucket 所在的区域
-            srcDir: "",     // 上传目录名
+            accessKeyId: "",        // * CDN 的应用ID
+            accessKeySecret: "",    // * CDN 的应用Secret
+            bucket: "",             // * 空间名称
+            dir: "",                // * 需要上传的本地目录名
+            region: "",             // bucket 所在的区域
             ignoreDir: false,
             deduplication: true,
             ignoreSuffix: 'html',
-            prefix: "",     // 项目名称 eg: /game/
+            prefix: `/${pkgJson.name}/`,     // CDN资源前缀，可以为空
         }
     }
 }
