@@ -15,7 +15,7 @@ const sep = chalk.gray('·')
  */
 
 exports.log = function (...args) {
-  const msg = format.apply(format, args)
+  const msg = format.apply(format, args)+'\n';
   console.log(chalk.white(prefix), sep, msg)
 }
 
@@ -27,7 +27,7 @@ exports.log = function (...args) {
 
 exports.fatal = function (...args) {
   if (args[0] instanceof Error) args[0] = args[0].message.trim()
-  const msg = format.apply(format, args)
+  const msg = format.apply(format, args)+'\n';
   console.error(chalk.red(prefix), '😂  → ', msg)
   process.exit(1)
 }
@@ -39,11 +39,11 @@ exports.fatal = function (...args) {
  */
 
 exports.success = function (...args) {
-  const msg = format.apply(format, args)
+  const msg = format.apply(format, args)+'\n';
   console.log(chalk.green(prefix), '😄  → ', msg)
 }
 
 exports.warn = function (...args) {
-  const msg = format.apply(format, args)
+  const msg = format.apply(format, args)+'\n';
   console.log(chalk.yellow(prefix), '⚠️  → ', msg)
 }

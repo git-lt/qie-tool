@@ -12,7 +12,7 @@ module.exports = (config, dirPath) => {
   client.multipartUpload(`${dirPath}/**`, 'local-file', {
     progress: p => progressBar.update(p, 100)
   }).then((res) => {
-    logger.success(`文件上传成功\n`)
+    logger.success(`文件上传成功`)
   }).catch((err) => {
     logger.fatal(err)
   });

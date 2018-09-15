@@ -31,7 +31,7 @@ module.exports = (env) => {
     }
 
     inquirer.prompt([
-        { name: 'desc', type: 'input', message: `请输入版本说明: \n ` }
+        { name: 'desc', type: 'input', message: `请输入版本说明:  ` }
     ]).then(answers => {
         const desc = answers.desc || '';
         const pkgJson = resolve('package.json');

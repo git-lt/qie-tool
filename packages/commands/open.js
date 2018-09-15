@@ -17,6 +17,6 @@ module.exports = () => {
   if(config.pubUrl){
     opn(config.pubUrl)
   }else{
-    logger.warn(`请在 qie.config.js 中配置 pubUrl\n`)
+    logger.warn(`请在 qie.config.js 中配置 pubUrl`)
   }
 }

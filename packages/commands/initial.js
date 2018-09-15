@@ -10,15 +10,16 @@ const CONFIG_NAME = 'qie.config.js';
 function copyConfigJs(){
     figlet('qie cli', function(err, data) {
         if(err){
-            logger.fatal('Some thing about figlet is wrong!');
+            logger.fatal(err);
+        } else {
+            console.log(chalk.yellow(data));
+            let targetFilePath = path.resolve(CONFIG_NAME);
+            let templatePath = path.join(__dirname,'../templates/configjs/'+CONFIG_NAME);
+            let contents = fs.readFileSync(templatePath,'utf8');
+            fs.writeFileSync(targetFilePath,contents,'utf8');
+            console.log()
+            logger.success(`初始化配置文件 ${CONFIG_NAME} 成功`);
         }
-        console.log(chalk.yellow(data));
-        let targetFilePath = path.resolve(CONFIG_NAME);
-        let templatePath = path.join(__dirname,'../templates/configjs/'+CONFIG_NAME);
-        let contents = fs.readFileSync(templatePath,'utf8');
-        fs.writeFileSync(targetFilePath,contents,'utf8');
-        console.log()
-        logger.success(`初始化配置文件 ${CONFIG_NAME} 成功\n`);
         process.exit(0);
     });
 }
