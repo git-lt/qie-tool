@@ -14,9 +14,9 @@ module.exports = () => {
       config = require(resolve('qie.config.js'));
   }
 
-  if(config.pubUrl){
-    opn(config.pubUrl)
+  if(config.publish && config.publish.url){
+    opn(config.publish.url)
   }else{
-    logger.warn(`请在 qie.config.js 中配置 pubUrl`)
+    logger.warn(`请在 qie.config.js 中配置 publish.url`)
   }
 }

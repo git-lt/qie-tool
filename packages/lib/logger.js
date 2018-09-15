@@ -5,7 +5,7 @@ const format = require('util').format
  * Prefix.
  */
 
-const prefix = '   qie-cli'
+const prefix = '   qie-tool'
 const sep = chalk.gray('·')
 
 /**
