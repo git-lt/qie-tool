@@ -43,7 +43,7 @@ module.exports = (env) => {
         { name: 'desc', type: 'input', message: `请输入版本说明:  ` }
     ]).then(answers => {
         const desc = answers.desc || '';
-        const pkgJson = resolve('package.json');
+        const pkgJson = require(resolve('package.json'));
 
         const params = {
             content,
@@ -57,6 +57,9 @@ module.exports = (env) => {
 
         const spinner = new Spinner('正在发布...');
         
+        console.log(apiUrl)
+        console.log(Object.assign(({}, params, {content: '...'})));
+
         axios
             .post(apiUrl, params)
             .then(res => res.data)
@@ -68,10 +71,12 @@ module.exports = (env) => {
                 } else {
                     throw res;
                 }
+                process.exit(0);
             })
             .catch(err => {
                 spinner.stop();
                 logger.fatal(err);
+                process.exit(0);
             });
     }).catch(err => {
         logger.fatal(err);

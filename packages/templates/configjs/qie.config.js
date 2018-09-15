@@ -9,11 +9,11 @@ module.exports = {
   upload: {
     server: 'qn',               // * 阿里云：ali 七牛云: qn
     config: {
-      accessKeyId: "",        // * CDN 的应用ID
-      accessKeySecret: "",    // * CDN 的应用Secret
-      bucket: "",             // * 空间名称
-      dir: "",                // * 需要上传的本地目录名
-      region: "",             // bucket 所在的区域
+      accessKeyId: "",          // * CDN 的应用ID
+      accessKeySecret: "",      // * CDN 的应用Secret
+      bucket: "",               // * 空间名称
+      dir: "",                  // * 需要上传的本地目录名
+      region: "",               // bucket 所在的区域
       ignoreDir: false,
       deduplication: true,
       ignoreSuffix: 'html',
