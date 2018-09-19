@@ -49,6 +49,7 @@ module.exports = (env) => {
             content,
             version: pkgJson.version,
             envName: env,
+            key: config.publish.key,
             desc,
         };
         const apiUrl = `${config.publish.url}/pub/version`;
@@ -56,10 +57,6 @@ module.exports = (env) => {
         axios.defaults.responseType = 'json';
 
         const spinner = new Spinner('正在发布...');
-        
-        console.log(apiUrl)
-        console.log(Object.assign(({}, params, {content: '...'})));
-
         axios
             .post(apiUrl, params)
             .then(res => res.data)
