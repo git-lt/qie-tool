@@ -13,11 +13,12 @@ module.exports = {
       accessKeySecret: "",      // * CDN 的应用Secret
       bucket: "",               // * 空间名称
       dir: "dist",              // * 需要上传的本地目录名
-      region: "",               // bucket 所在的区域
+      region: "",               // * bucket 所在的区域（七牛选填）
+      prefix: `/${pkgJson.name}/`,  // * CDN资源前缀
+
       ignoreDir: false,
       deduplication: true,
-      ignoreSuffix: 'html',
-      prefix: `/${pkgJson.name}/`,  // CDN资源前缀，可以为空
+      ignoreSuffix: 'html,css',
     }
   }
 }
