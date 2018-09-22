@@ -1,5 +1,5 @@
 node_modules
 .idea/**
 package-lock.json
-./qie.config.js
+/qie.config.js
 .vscode

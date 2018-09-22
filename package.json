@@ -1,6 +1,6 @@
 {
   "name": "qie-tool",
-  "version": "0.0.9",
+  "version": "0.1.2",
   "description": "A simple CLI for publish projects.",
   "bin": {
     "qie": "./bin/qie",
@@ -25,7 +25,6 @@
   "author": "hz_liutao@qq.com",
   "license": "ISC",
   "dependencies": {
-    "ali-oss": "^6.0.1",
     "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "clui": "^0.3.6",
@@ -34,6 +33,7 @@
     "gulp": "^3.9.1",
     "gulp-qiniu": "^0.2.4",
     "inquirer": "^6.0.0",
+    "meetyou-ali-oss": "^1.0.7",
     "opn": "^5.3.0",
     "shelljs": "^0.8.2"
   }
