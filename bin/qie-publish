@@ -12,8 +12,8 @@ program.on('--help', () => {
   console.log()
   console.log('  Examples:')
   console.log()
-  console.log(chalk.gray('    # 将版本信息记录到 dev.abc.com 环境'))
-  console.log('    $ qie publish dev.abc.com')
+  console.log(chalk.gray('    # 将版本信息记录到 dev 环境'))
+  console.log('    $ qie publish dev')
   console.log()
 })
 

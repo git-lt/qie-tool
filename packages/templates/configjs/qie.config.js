@@ -5,6 +5,13 @@ module.exports = {
   publish: {
     url: '',                    // * 前端项目管理平台地址
     key: '',                    // * 前端项目管理平台中应用的 KEY
+    env: {
+      dev: '',  // 开发环境
+      test: '', // 测试环境
+      pre: '',  // 预发环境
+      pro: '',  // 生产环境
+      // ... 更多环境配置, 使用： qie upload dev/test/pre/pro
+    }
   },
   upload: {
     server: 'qn',               // * 阿里云：ali 七牛云: qn

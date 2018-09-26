@@ -24,7 +24,19 @@ module.exports = (env) => {
         return logger.warn('请在配置文件 qie.config.js 中配置 publish.url')
     }
 
-    // config.publish.key
+    // 检查 env
+    if(!config.publish.env[env]){
+        return logger.warn(`请在配置文件 qie.config.js 中配置 publish.env.${env}`)
+    }
+
+    const envName = config.publish.env[env]
+    
+    const regDomain = /^(?=^.{3,255}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$/;
+
+    // 检查环境名称是否是合法域名
+    if(!regDomain.test(envName)){
+        return logger.warn(`${envName} 格式错误，例：www.xxx.com / dev.xxx.com`)
+    }
 
     // 检查 index.html
     const indexHtmPath = resolve(`${config.upload.config.dir}/index.html`);
@@ -40,17 +52,17 @@ module.exports = (env) => {
     }
 
     inquirer.prompt([
-        { name: 'desc', type: 'input', message: `请输入版本说明:  ` }
+        { name: 'desc', type: 'input', message: `[${envName}] - 请输入版本说明:  ` }
     ]).then(answers => {
         const desc = answers.desc || '';
         const pkgJson = require(resolve('package.json'));
 
         const params = {
-            content,
-            version: pkgJson.version,
-            envName: env,
-            key: config.publish.key,
             desc,
+            content,
+            envName,
+            version: pkgJson.version,
+            key: config.publish.key,
         };
         const apiUrl = `${config.publish.url}/pub/version`;
         axios.defaults.timeout = 30 * 1000;
