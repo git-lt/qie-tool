@@ -10,7 +10,7 @@ module.exports = {
       test: '', // 测试环境
       pre: '',  // 预发环境
       pro: '',  // 生产环境
-      // ... 更多环境配置, 使用： qie upload dev/test/pre/pro
+      // ... 更多环境配置, 使用： qie publish dev/test/pre/pro
     }
   },
   upload: {
@@ -18,10 +18,10 @@ module.exports = {
     config: {
       accessKeyId: "",          // * CDN 的应用ID
       accessKeySecret: "",      // * CDN 的应用Secret
-      bucket: "",               // * 空间名称
+      bucket: "",               // * 空间名称(桶名)
       dir: "dist",              // * 需要上传的本地目录名
       region: "",               // * bucket 所在的区域（七牛选填）
-      prefix: `/${pkgJson.name}/`,  // * CDN资源前缀
+      prefix: pkgJson.name,     // * CDN资源前缀
 
       ignoreDir: false,
       deduplication: true,
